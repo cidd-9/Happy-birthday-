@@ -587,3 +587,163 @@ transform:translateX(120%);
 }
 
 }
+/* ===========================
+   PART 3 - FINAL POLISH
+=========================== */
+
+/* Moon glow */
+body::before{
+content:"";
+position:fixed;
+top:-120px;
+right:-120px;
+width:350px;
+height:350px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(255,255,255,.85),
+rgba(255,255,255,.12),
+transparent 70%);
+filter:blur(10px);
+z-index:-3;
+}
+
+/* Floating particles */
+body::after{
+content:"";
+position:fixed;
+inset:0;
+background-image:
+radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1px),
+radial-gradient(circle,rgba(255,220,240,.7) 1px,transparent 1px);
+background-size:90px 90px,140px 140px;
+animation:starsMove 35s linear infinite;
+pointer-events:none;
+z-index:-2;
+opacity:.5;
+}
+
+@keyframes starsMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-250px);
+}
+}
+
+/* Better button */
+
+button{
+position:relative;
+overflow:hidden;
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:120%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.55),
+transparent
+);
+
+transition:.8s;
+
+}
+
+button:hover::before{
+
+left:130%;
+
+}
+
+/* Smooth fade */
+
+.hero,
+#letter,
+#final{
+
+animation:fadePage 1.2s;
+
+}
+
+@keyframes fadePage{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.glass,
+.letterCard,
+.finalCard{
+
+padding:28px;
+
+width:95%;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+.quote,
+.letterCard p,
+.finalCard p{
+
+font-size:16px;
+
+line-height:1.9;
+
+}
+
+button{
+
+width:100%;
+
+font-size:17px;
+
+}
+
+}
