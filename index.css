@@ -1,0 +1,166 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#ec4899);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:white;
+text-align:center;
+min-height:100vh;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+h1{
+font-size:3rem;
+text-shadow:0 0 20px rgba(255,255,255,.7);
+margin-bottom:15px;
+animation:fadeDown 1.2s;
+}
+
+.subtitle{
+font-size:1.2rem;
+opacity:.9;
+margin-bottom:30px;
+animation:fadeUp 1.4s;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4fa3;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 25px rgba(255,79,163,.6);
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff78bc;
+}
+
+.hidden{
+display:none;
+}
+
+#letter,#surprise{
+padding:60px 25px;
+animation:fade 1s;
+}
+
+#letter h2{
+font-size:2.3rem;
+margin-bottom:20px;
+}
+
+#letter p{
+font-size:1.15rem;
+line-height:1.9;
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.12);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(255,255,255,.2);
+}
+
+#surprise h2{
+font-size:2.6rem;
+margin-top:10px;
+color:#ffd5ea;
+}
+
+#surprise p{
+font-size:1.2rem;
+margin-top:20px;
+line-height:1.8;
+}
+
+.cake{
+font-size:90px;
+margin-top:35px;
+animation:bounce 2s infinite;
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(white 1px,transparent 1px);
+background-size:60px 60px;
+background-position:0 0,30px 30px;
+opacity:.35;
+animation:moveStars 30s linear infinite;
+}
+
+@keyframes moveStars{
+from{transform:translateY(0);}
+to{transform:translateY(-250px);}
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:700px){
+
+h1{
+font-size:2.2rem;
+}
+
+.subtitle{
+font-size:1rem;
+}
+
+#letter p{
+font-size:1rem;
+}
+
+button{
+width:90%;
+max-width:320px;
+}
+
+}
