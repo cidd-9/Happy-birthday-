@@ -1,164 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Aditi 🌸</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="index.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday, Aditi🎀</title>
+  
+  <!-- Canvas Confetti Library for Celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- Aesthetic Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<div class="background"></div>
+  <!-- Ambient Floating Background Particles -->
+  <div id="particle-container"></div>
+  
+  <!-- ==========================================
+       PAGE 1: THE GRAND ENTRANCE & WELCOME
+       ========================================== -->
+  <section id="page-1" class="page-screen active-page">
+    <main class="hero-wrapper">
+      <div class="welcome-card">
+        <div class="card-badge">It's a special day to a special person ✨</div>
+        
+        <header class="main-header">
+          <!-- REPLACE HER NAME HERE -->
+          <h1 class="sparkle-title">Happy Birthday, <span class="highlight-name">Aditi</span>! 🎉</h1>
+          <p class="tagline">It's a small lovely way to wish u happy birthday hope you''ll like it </p>
+        </header>
 
-<div class="petals">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+        <!-- Interactive Envelope Seal -->
+        <div class="envelope-box" onclick="openEnvelope()">
+          <div class="envelope-seal">💖</div>
+          <p class="envelope-hint">Tap the heart seal to open your surprise greeting!</p>
+        </div>
 
-<div class="overlay"></div>
+        <!-- Hidden Surprise Reveal -->
+        <div id="surprise-reveal" class="hidden-content">
+          <div class="quote-box">
+            <p class="quote-text">"Some people may not be always together but surely their lovely memories are, your memory is surely engraved in me too"</p>
+          </div>
 
-<section class="hero">
+          <div class="interactive-facts">
+            <h3>Quick Birthday features</h3>
+            <ul class="stats-list">
+              <li><span class="stat-emoji">✨</span> <strong>365 Days</strong> of being iconic</li>
+              <li><span class="stat-emoji">🌸</span> <strong>100%</strong> chance of being loved today</li>
+              <li><span class="stat-emoji">🎀</span> <strong>Infinite</strong> lovely memories to live</li>
+            </ul>
+          </div>
+        </div>
 
-<div class="glass" style="position:relative;">
+        <!-- Go to Page 2 Button -->
+        <footer class="card-footer">
+          <button class="nav-btn primary-btn" onclick="goToPage(2)">
+            <span>Next page</span></span>🌸</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </footer>
+      </div>
+    </main>
+  </section>
 
-<p class="small">
-A Special Gift
-</p>
 
-<h1>
-Happy Birthday
-</h1>
+  <!-- ==========================================
+       PAGE 2: MEMORY LANE & SECRET GIFT BOXES
+       ========================================== -->
+  <section id="page-2" class="page-screen">
+    <main class="content-container">
+      <header class="section-header">
+        <span class="chapter-number">The second space</span>
+        <h2>The Memory Gallery 📸</h2>
+        <p class="subtitle">Jyada pics nhi hai too jo mile laga diye 🥹</p>
+      </header>
 
-<h2>
-Aditi 🌸
-</h2>
+      <!-- Polaroid Stack Gallery -->
+      <div class="polaroid-gallery">
+        
+        <!-- Photo Card 1 -->
+        <article class="polaroid-card" style="--angle: -3deg;">
+          <div class="photo-frame">
+            <!-- Replace image URL with her photo link -->
+            <img src="img1.jpg" />
+          </div>
+          <figcaption class="polaroid-caption">
+            <span>Unforgettable Beauty 🌸</span>
+            <small class="photo-date">btw Sundar lag rahi hai isme</small>
+          </figcaption>
+        </article>
 
-<p class="quote">
+        <!-- Photo Card 2 -->
+        <article class="polaroid-card" style="--angle: 3deg;">
+          <div class="photo-frame">
+            <img src="img9.jpg" />
+          </div>
+          <figcaption class="polaroid-caption">
+            <span>Cutest pic of the cutie</span>
+            <small class="photo-date">The Best pic that is really cute as you🎀</small>
+          </figcaption>
+        </article>
 
-"Some people enter our lives quietly,
-yet leave behind memories that stay forever."
+        <!-- Photo Card 3 -->
+        <article class="polaroid-card" style="--angle: -2deg;">
+          <div class="photo-frame">
+            <img src="img6.jpg" />
+          </div>
+          <figcaption class="polaroid-caption">
+            <span>I'll always be Cheering for You! 🥂</span>
+            <small class="photo-date">Always stay motivated as your smile is</small>
+          </figcaption>
+        </article>
 
-</p>
+      </div>
 
-<button id="openGift">
-Open Your Gift 🎁
-</button>
+      <!-- Secret Surprise Gifts -->
+      <div class="secret-notes-section">
+        <h3>Tap a Box to unlock something</h3>
+        
+        <div class="gift-grid">
+          <div class="gift-box" onclick="revealNote(1)">
+            <div class="gift-emoji">🗞️</div>
+            <span class="gift-label">Box #1</span>
+            <p id="note-1" class="hidden-note">Chl be chikni Kya secrets jan me hai be teko?? </p>
+          </div>
 
-</div>
+          <div class="gift-box" onclick="revealNote(2)">
+            <div class="gift-emoji">🎀</div>
+            <span class="gift-label">Box #2</span>
+            <p id="note-2" class="hidden-note">Birthday to aj mera bhi hai to isi baat pe kisi din dono chale kahi pe party karne??</p>
+          </div>
 
-</section>
+          <div class="gift-box" onclick="revealNote(3)">
+            <div class="gift-emoji">👉🏻👈🏻</div>
+            <span class="gift-label">Box #3</span>
+            <p id="note-3" class="hidden-note">Tarikh pe chalogi bbg?? hehe mazak tha ya syd nhi... who knows 😋</p>
+          </div>
+        </div>
+      </div>
 
-<section id="letter" class="hidden">
+      <!-- Navigation Buttons -->
+      <footer class="multi-nav">
+        <button class="nav-btn secondary-btn" onclick="goToPage(1)">← Back</button>
+        <button class="nav-btn primary-btn" onclick="goToPage(3)">Tap here ✨</button>
+      </footer>
+    </main>
+  </section>
 
-<div class="letterCard">
 
-<h2>Dear Aditi 🌸</h2>
+  <!-- ==========================================
+       PAGE 3: CAKE, TYPEWRITER LETTER & WISHES
+       ========================================== -->
+  <section id="page-3" class="page-screen">
+    <main class="content-container">
+      
+      <header class="section-header">
+        <span class="chapter-number">Final page</span>
+        <h2>Make A Wish! 🎂</h2>
+        <p class="subtitle" id="cake-instruction">Tap the candle flame to blow it out & unlock your letter!</p>
+      </header>
 
-<p>
+      <!-- Interactive Blow Candle Cake -->
+      <div class="cake-section">
+        <div class="cake-touch-zone" onclick="blowCandle()">
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+          <div class="cake-top"></div>
+          <div class="cake-base"></div>
+        </div>
+      </div>
 
-Happy Birthday.
+      <!-- Secret Typewriter Birthday Letter -->
+      <div class="letter-section">
+        <div class="paper-card">
+          <div class="paper-header">
+            <span class="stamp">Special message</span>
+            <!-- REPLACE HER NAME HERE -->
+            <h3 class="letter-heading">Dearest <span class="highlight-name">Aditi</span>,</h3>
+          </div>
 
-I know this month has been full of exams,
-stress and responsibilities.
+          <!-- Typewriter message generates here from JS -->
+          <div id="typed-text" class="letter-body"></div>
 
-So today...
+          <div class="letter-signature">
+            <p>Wish you a really great happiest birthday,</p>
+            <!-- REPLACE YOUR NAME HERE -->
+            <span class="signature-name">~Arya</span>
+          </div>
 
-Forget everything else.
+          <div class="action-bar">
+            <button class="btn celebration-btn" onclick="triggerMassiveConfetti()">Tap for a lot of Confetti! 🎊</button>
+          </div>
+        </div>
+      </div>
 
-Take a deep breath.
+      <!-- Birthday Wishes Checklist -->
+      <div class="wishes-section">
+        <h3>My Wishes For You This Year 🌟</h3>
+        <div class="wish-list">
+          <label class="wish-item">
+            <input type="checkbox" checked disabled />
+            <span class="custom-checkbox"></span>
+            <span>Hope we get good marks in exams😭</span>
+          </label>
+          <label class="wish-item">
+            <input type="checkbox" checked disabled />
+            <span class="custom-checkbox"></span>
+            <span>Wish u enjoy your everyday as it's special 💞</span>
+          </label>
+          <label class="wish-item">
+            <input type="checkbox" checked disabled />
+            <span class="custom-checkbox"></span>
+            <span>Achieving every single goal on you wish for</span>
+          </label>
+          <label class="wish-item">
+            <input type="checkbox" checked disabled />
+            <span class="custom-checkbox"></span>
+            <span>Ummed hai atleast ye sal acche se Jaye 🥲😭</span>
+          </label>
+        </div>
+      </div>
 
-Smile.
+      <!-- Bottom Navigation -->
+      <footer class="multi-nav">
+        <button class="nav-btn secondary-btn" onclick="goToPage(2)">← Back to Gallery</button>
+        <button class="nav-btn home-btn" onclick="goToPage(1)">Start Over 🔄</button>
+      </footer>
 
-Because today is about celebrating you.
+    </main>
+  </section>
 
-Thank you for being such a wonderful friend.
-
-I genuinely hope this year brings you
-peace,
-happiness,
-success
-and countless beautiful memories.
-
-No matter how difficult life becomes,
-
-never forget
-
-you matter.
-
-Happy Birthday once again.
-
-❤️
-
-— Arya
-
-</p>
-
-<button id="next">
-
-One Last Surprise ✨
-
-</button>
-
-</div>
-
-</section>
-
-<section id="final" class="hidden">
-
-<div class="glass finalCard">
-
-<h1>🎂 Happy Birthday 🎂</h1>
-
-<h2>Aditi 🌸</h2>
-
-<p>
-
-May every falling sakura petal
-carry a new happiness into your life.
-
-Keep smiling.
-
-Keep shining.
-
-The world is brighter because you're in it.
-
-</p>
-
-<div style="margin-top:40px;">
-
-<a href="PASTE_YOUR_GOOGLE_PHOTOS_LINK_HERE"
-target="_blank">
-
-<button class="videoBtn">
-
-🎥 Watch Your Birthday Surprise
-
-</button>
-
-</a>
-
-</div>
-</div>
-
-</section>
-
-<script src="script.js"></script>
-
+  <!-- Link to External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
